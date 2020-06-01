@@ -6,7 +6,7 @@ All the applocation components will run  as the docker containers inside docker 
 
 #### Components
 
-- Trader - Thre JSP servlet based UI
+- Trader - The JSP servlet based UI
 - Portfolio - Java microservice to store and retrive the portfolios from the DB2 database
 - Stock Quota - Holds the information for the stock quotes for diffrent also uses the Redis cache to store and retrive the stock quotes for faster access.
 - IBM ODM - Operation Decesion Manager where we will have the loylty decesion service running to determine the loyelty for particular portfolio
