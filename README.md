@@ -2,16 +2,16 @@
  <p align="center">
 <img alt="st-v2" src="StockTraderHeritageApp.PNG"/>
 </p>
-All the applocation components will run  as the docker containers inside docker engine.
+All the application components will run  as the docker containers inside docker engine.
 
 #### Components
 
 - Trader - The JSP servlet based UI
-- Portfolio - Java microservice to store and retrive the portfolios from the DB2 database
-- Stock Quota - Holds the information for the stock quotes for diffrent also uses the Redis cache to store and retrive the stock quotes for faster access.
-- IBM ODM - Operation Decesion Manager where we will have the loylty decesion service running to determine the loyelty for particular portfolio
+- Portfolio - Java microservice to store and retrieve the portfolios from the DB2 database
+- Stock Quota - Holds the information for the stock quotes for different also uses the Redis cache to store and retrieve the stock quotes for faster access.
+- IBM ODM - Operation Decision Manager where we will have the loyalty decision service running to determine the loyalty for a particular portfolio
 - Redis - Used for caching the data in Stock Quote microservice
-- IBM DB2 - To store the Portfolio details for diffrent owners
+- IBM DB2 - To store the Portfolio details for different owners
 
 ##### Pre-requisiets:
 
@@ -29,13 +29,13 @@ All the applocation components will run  as the docker containers inside docker 
   ```
  - Check the docker container status with `docker ps`
  
-##### Install Stock Trader Componets on VM 1
+##### Install Stock Trader components on VM 1
 - Clone the repo  `git clone https://github.com/vmware-ibm-jil/stocktrader-jil-v2.git' 
 - Go to installation directory  `cd stocktrader-jil-v2/installation/`
 - Edit the docker-compose.yml to update the details for DB2 and RabbitMQ details
-- Excute the command - `docker-compose up -d` it will show the progress for services creations and docker network.
-- On the successfull execution you can check the conatiners logs as it may take some time for initialization, you can check the ps using the `docker ps` or `docker-compose ps`
+- Execute the command - `docker-compose up -d` it will show the progress for services creations and docker network.
+- On the successful execution, you can check the containers logs as it may take some time for initialization, you can check the ps using the `docker ps` or `docker-compose ps`
 - Access the ODM service `http:<Docker-Host>:9060`
-- Once it loads click on the link Decision Center Business console and upload the deployemnt service zip file from path 'cd stocktrader-jil-v2/src/portfolio/stock-trader-loyalty-decision-service.zip' in this repo
-- Now access the Stock Trader UI using url - `https://<Docker-Host>:9443/trader` 
+- Once it loads click on the link Decision Center Business console and upload the deployment service zip file from path 'cd stocktrader-jil-v2/src/portfolio/stock-trader-loyalty-decision-service.zip' in this repo
+- Now access the Stock Trader UI using URL - `https://<Docker-Host>:9443/trader` 
  
