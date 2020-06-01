@@ -6,20 +6,20 @@ All the application components will run  as the docker containers inside docker 
 
 #### Components
 
-- Trader - The JSP servlet based UI
+- Trader - The JSP servlet based UI- provides user operations - create portfolio, Update Portfolio, Retrieve Portfolio and Delete Portfolio. 
 - Portfolio - Java microservice to store and retrieve the portfolios from the DB2 database
-- Stock Quota - Holds the information for the stock quotes for different also uses the Redis cache to store and retrieve the stock quotes for faster access.
+- Stock Quote - Provides the information about stock quotes for different symbols. Uses the Redis cache to store and retrieve the stock quotes for faster access.
 - IBM ODM - Operation Decision Manager where we will have the loyalty decision service running to determine the loyalty for a particular portfolio
 - Redis - Used for caching the data in Stock Quote microservice
 - IBM DB2 - To store the Portfolio details for different owners
 
-##### Pre-requisiets:
+##### prerequisites:
 
-- 2 ubuntu 16.04 (_must be netwok connected_)
-- Install Docker Engine
-- Install Docker compose
+- Two ubuntu 16.04 Virtual Machines (_must be netwok connected_)
+- Install Docker Engine [link](https://docs.docker.com/engine/install/ubuntu/)
+- Install Docker compose [link](https://docs.docker.com/compose/install/)
 
-##### Install DB2 on VM 2
+##### Install DB2 on VM 2:
 
 - Execute the below commads:
   ```bash
@@ -29,7 +29,7 @@ All the application components will run  as the docker containers inside docker 
   ```
  - Check the docker container status with `docker ps`
  
-##### Install Stock Trader components on VM 1
+##### Install Stock Trader components on VM 1:
 - Clone the repo  `git clone https://github.com/vmware-ibm-jil/stocktrader-jil-v2.git`
 - Go to installation directory  `cd stocktrader-jil-v2/installation/`
 - Edit the docker-compose.yml to update the details for DB2 and RabbitMQ details
@@ -43,4 +43,9 @@ All the application components will run  as the docker containers inside docker 
 - Go to installation directory  `cd stocktrader-jil-v2/installation/`
 - Execute the `docker-compose down`
 - Check the docker containers are removed `docker ps` 
+
+##### Uninstall DB2 from VM 2:
+- Run `docker ps` check the containerid/name for DB2 container
+- Execute `docker container stop mydb2`
+- Remove the container - `docker container rm mydb2`
  
