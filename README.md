@@ -54,3 +54,15 @@ All the application components will run  as the docker containers inside docker 
 <p align="center">
 <img alt="st-v2" src="StockTraderNewUI.PNG"/>
 </p>
+
+##### Prerequisites:
+- OpenShift Container Platform (OCP) (_Network connected with VM1 from heritage application_)
+
+##### Installation Tradr UI on OCP
+- Clone the repo  `git clone https://github.com/vmware-ibm-jil/stocktrader-jil-v2.git`
+- `cd stocktrader-jil-v2/tradr`
+- Generate the screts 
+```bash
+```
+- Deploy the application with commad `kubectl apply -f mainifest` (_this command will deploy the new Tradr UI_)
+- Access the Tradr UI
