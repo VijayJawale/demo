@@ -13,7 +13,7 @@ All the application components will run  as the docker containers inside docker 
 - Redis - Used for caching the data in Stock Quote microservice
 - IBM DB2 - To store the Portfolio details for different owners
 
-##### prerequisites:
+##### Prerequisites:
 
 - Two ubuntu 16.04 Virtual Machines (_must be netwok connected_)
 - Install Docker Engine [link](https://docs.docker.com/engine/install/ubuntu/)
@@ -50,3 +50,7 @@ All the application components will run  as the docker containers inside docker 
 - Execute `docker container stop mydb2`
 - Remove the container - `docker container rm mydb2`
  
+## Deploy modern UI front-end on OCP
+<p align="center">
+<img alt="st-v2" src="StockTraderNewUI.PNG"/>
+</p>
