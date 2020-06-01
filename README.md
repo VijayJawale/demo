@@ -30,7 +30,7 @@ All the application components will run  as the docker containers inside docker 
  - Check the docker container status with `docker ps`
  
 ##### Install Stock Trader components on VM 1
-- Clone the repo  `git clone https://github.com/vmware-ibm-jil/stocktrader-jil-v2.git' 
+- Clone the repo  `git clone https://github.com/vmware-ibm-jil/stocktrader-jil-v2.git`
 - Go to installation directory  `cd stocktrader-jil-v2/installation/`
 - Edit the docker-compose.yml to update the details for DB2 and RabbitMQ details
 - Execute the command - `docker-compose up -d` it will show the progress for services creations and docker network.
