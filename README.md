@@ -28,16 +28,17 @@ All the application components will run  as the docker containers inside docker 
   sudo docker exec -ti mydb2 bash -c "su - db2inst1"
   ```
  - Check the docker container status with `docker ps`
+ - Make sure you are able to telnet VM2 at port 50000 from VM1
  
 ##### Install Stock Trader components on VM 1:
 - Clone the repo  `git clone https://github.com/vmware-ibm-jil/stocktrader-jil-v2.git`
 - Go to installation directory  `cd stocktrader-jil-v2/installation/`
 - Edit the docker-compose.yml to update the details for DB2 and RabbitMQ details
-- Execute the command - `docker-compose up -d` it will show the progress for services creations and docker network.
-- On the successful execution, you can check the containers logs as it may take some time for initialization, you can check the ps using the `docker ps` or `docker-compose ps`
-- Access the ODM service `http:<Docker-Host>:9060`
-- Once it loads click on the link Decision Center Business console and upload the deployment service zip file from path 'cd stocktrader-jil-v2/src/portfolio/stock-trader-loyalty-decision-service.zip' in this repo
-- Now access the Stock Trader UI using URL - `https://<Docker-Host>:9443/trader` 
+- Execute the command - `docker-compose up -d` it will show the progress for services creations and docker network. (_prefer adding the timeout with command `COMPOSE_HTTP_TIMEOUT=300 docker-compose up -d` as sometimes it may fail if execution takes more time_)
+- On the successful execution, you can check the containers logs as it may take some time for initialization (_use commads `docker-compose logs` or you an check logs for docker containers with `docker logs <container_id>`_), you can check the containers running using the `docker ps` or `docker-compose ps`
+- Access the ODM service `http:<Docker-Host>:9060` use credentials (_username: odmAdmin password: odmAdmin_) 
+- Once it loads click on the link Decision Center Business console and upload the deployment service zip file from path `stocktrader-jil-v2/src/portfolio/stock-trader-loyalty-decision-service.zip` in this repo
+- Now access the Stock Trader UI using URL - `https://<Docker-Host>:9443/trader` (_username: admin password: admin) 
 
 ##### Uninstall components on VM 1
 - Go to installation directory  `cd stocktrader-jil-v2/installation/`
