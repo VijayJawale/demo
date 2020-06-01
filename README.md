@@ -61,8 +61,12 @@ All the application components will run  as the docker containers inside docker 
 ##### Installation Tradr UI on OCP
 - Clone the repo  `git clone https://github.com/vmware-ibm-jil/stocktrader-jil-v2.git`
 - `cd stocktrader-jil-v2/tradr`
-- Generate the screts 
+- Generate the below secrets 
 ```bash
+kubectl create secret generic trader-host --from-literal=host=https://<VM1_HOST>:9443
+kubectl create secret generic portfolio-host --from-literal=host=https://<VM1_HOST>:9442
+kubectl create secret generic ingress-host --from-literal=host=https://<OCP_Cluster_Host>:3000
+kubectl create secret generic jwt --from-literal=audience=stock-trader --from-literal=issuer=http://stock-trader.ibm.com
 ```
 - Deploy the application with commad `kubectl apply -f mainifest` (_this command will deploy the new Tradr UI_)
-- Access the Tradr UI
+- Access the Tradr UI - `https://<OCP_Cluster_Host>:3000/tradr/#/login`
