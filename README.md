@@ -15,7 +15,7 @@ All the application components will run  as the docker containers inside docker 
 
 ##### Pre-requisiets:
 
-- 2 Ubantu 16.04 VMs
+- 2 ubuntu 16.04 (_must be netwok connected_)
 - Install Docker Engine
 - Install Docker compose
 
@@ -38,4 +38,9 @@ All the application components will run  as the docker containers inside docker 
 - Access the ODM service `http:<Docker-Host>:9060`
 - Once it loads click on the link Decision Center Business console and upload the deployment service zip file from path 'cd stocktrader-jil-v2/src/portfolio/stock-trader-loyalty-decision-service.zip' in this repo
 - Now access the Stock Trader UI using URL - `https://<Docker-Host>:9443/trader` 
+
+##### Uninstall components on VM 1
+- Go to installation directory  `cd stocktrader-jil-v2/installation/`
+- Execute the `docker-compose down`
+- Check the docker containers are removed `docker ps` 
  
