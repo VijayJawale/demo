@@ -36,9 +36,9 @@ All the application components will run  as the docker containers inside docker 
 - Edit the docker-compose.yml to update the details for DB2 and RabbitMQ details
 - Execute the command - `docker-compose up -d` it will show the progress for services creations and docker network. (_prefer adding the timeout with command `COMPOSE_HTTP_TIMEOUT=300 docker-compose up -d` as sometimes it may fail if execution takes more time_)
 - On the successful execution, you can check the containers logs as it may take some time for initialization (_use commads `docker-compose logs` or you an check logs for docker containers with `docker logs <container_id>`_), you can check the containers running using the `docker ps` or `docker-compose ps`
-- Access the ODM service `http:<Docker-Host>:9060` use credentials (_username: odmAdmin password: odmAdmin_) 
+- Access the ODM service `http:<VM1-Host>:9060` use credentials (_username: odmAdmin password: odmAdmin_) 
 - Once it loads click on the link Decision Center Business console and upload the deployment service zip file from path `stocktrader-jil-v2/src/portfolio/stock-trader-loyalty-decision-service.zip` in this repo
-- Now access the Stock Trader UI using URL - `https://<Docker-Host>:9443/trader` (_username: admin password: admin) 
+- Now access the Stock Trader UI using URL - `https://<VM1-Host>:9443/trader` (_username: admin password: admin) 
  
 ## Deploy modern UI front-end on OCP
 <p align="center">
@@ -72,8 +72,7 @@ kubectl apply -f service.yml
 kubectl apply -f Ingress.yml
 
 ```
-- Deploy the application with commad `kubectl apply -f mainifest` (_this command will deploy the new Tradr UI_)
-- Access the Tradr UI - `https://<OCP_Cluster_Host>:3000/tradr/#/login`
+- Now you can access the modern Tradr UI with url - `https://<OCP_Cluster_Host:<Node_Port>/tradr/#/login` example: `https://172.17.76.32:31002/tradr/#/login` 
 
 
 
