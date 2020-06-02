@@ -13,8 +13,6 @@ All the application components will run  as the docker containers inside docker 
 - Redis - Used for caching the data in Stock Quote microservice
 - IBM DB2 - To store the Portfolio details for different owners
 
-### Installation
-
 ##### Prerequisites:
 
 - Two ubuntu 16.04 Virtual Machines (_must be netwok connected_)
@@ -83,7 +81,7 @@ kubectl apply -f Ingress.yml
 
 ##### Uninstall modern UI front-end
 ```bash
-# Delete the privios secrests
+# Delete the secrests
 kubectl delete secret ingress-host
 kubectl delete secret jwt
 kubectl delete secret portfolio-host
