@@ -50,7 +50,7 @@ All the application components will run  as the docker containers inside docker 
 
 ##### Installation Tradr UI on OCP
 - Clone the repo  `git clone https://github.com/vmware-ibm-jil/stocktrader-jil-v2.git`
-- `cd stocktrader-jil-v2/tradr`
+- `cd stocktrader-jil-v2/installation`
 - Generate the below secrets 
 ```bash
 # Add new secrets
